@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Simple</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Banner -->
+
+    <header>
+      <nav>
+        <div class="circle-menu">
+          <div class="menu-left-icon">
+            <!-- Aquí va el ícono a la izquierda -->
+            <img src="./icon/icon-pollo.png" alt="Icono" class="left-icon" />
+          </div>
+
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="./contactanos.html">Contactanos</a></li>
+          </ul>
+
+          <div id="cart-icon" onclick="openCartModal()">
+            🛒 <span id="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="banner">
+        <div class="banner-text">
+          <h1>Pollos Coloridos</h1>
+          <p>¡Descubre la tienda más loca de pollos de colores!</p>
+          <button>Explora ahora</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="products">
+        <div class="product">
+          <h3>Poio amarillo</h3>
+          <p>Precio: $10</p>
+          <img src="./img/amarillo.jpg" alt="" />
+          <button onclick="addToCart('Producto 1', 10)">
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Poio azul</h3>
+          <p>Precio: $15</p>
+          <img src="./img/azul.jpg" alt="" />
+          <button onclick="addToCart('Producto 2', 15)">
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Poio morado</h3>
+          <p>Precio: $29</p>
+          <img src="./img/morado.jpg" alt="" />
+          <button onclick="addToCart('Producto 3', 20)">
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Poio naranja</h3>
+          <p>Precio: $27</p>
+          <img src="./img/naranja.jpg" alt="" />
+          <button onclick="addToCart('Producto 3', 20)">
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Poio rojo</h3>
+          <p>Precio: $22</p>
+          <img src="./img/rojo.jpg" alt="" />
+          <button onclick="addToCart('Producto 3', 20)">
+            Agregar al carrito
+          </button>
+        </div>
+
+        <div class="product">
+          <h3>Poio verde</h3>
+          <p>Precio: $25</p>
+          <img src="./img/verde.jpg" alt="" />
+          <button onclick="addToCart('Producto 3', 20)">
+            Agregar al carrito
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal del carrito -->
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items">
+          <!-- Los productos del carrito aparecerán aquí -->
+        </ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button id="buy-button" onclick="buyItems()">Comprar</button>
+        <!-- Botón de comprar -->
+      </div>
+    </div>
+
+    <!-- Modal de confirmación de compra -->
+    <div id="purchase-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closePurchaseModal()">&times;</span>
+        <h2>¡Felicidades por tu compra!</h2>
+        <p>Gracias por tu compra. Tu carrito ha sido limpiado.</p>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

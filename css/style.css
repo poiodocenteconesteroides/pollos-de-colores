@@ -1,0 +1,236 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* Banner styling */
+
+.banner {
+  background-image: url('../img/pollos.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-position: 20% 26%;
+  height: 555px;
+  position: relative;
+  color: white; 
+}
+
+.banner-img {
+  object-fit: contain; 
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  left: 50%;
+  text-align: center;
+  text-shadow: 3px 0px 3px #474747;
+  transform: translate(-50%, -50%);
+}
+
+/* Circle menu styling */
+.circle-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); 
+  border: 3px solid #000;
+  border-radius: 50px;
+  padding: 10px 20px;
+  width: 80%;
+  margin: 0 auto;
+  position: absolute; 
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; 
+}
+
+/* Icono a la izquierda */
+.menu-left-icon {
+  display: flex;
+  align-items: center;
+}
+
+.left-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Centrar las opciones del menú */
+.circle-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.circle-menu ul li {
+  display: inline-block;
+  text-align: center;
+}
+
+.circle-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+}
+
+/* Carrito a la derecha */
+#cart-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px; /* Espacio entre los productos */
+  justify-items: center; /* Centra los productos en sus columnas */
+}
+
+/* Producto básico */
+.product {
+    border: 1px solid #fffb0000;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    width: 250px; 
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2); 
+  }
+  
+  
+
+.product img {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover; 
+}
+
+.product:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; 
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Para mostrar el modal */
+.modal.open {
+  display: block;
+}
+
+
+
+#purchase-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#purchase-modal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+}
+
+ 
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 1024px) {
+  #products {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); 
+  }
+}
+
+@media (max-width: 600px) {
+  #products {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}
